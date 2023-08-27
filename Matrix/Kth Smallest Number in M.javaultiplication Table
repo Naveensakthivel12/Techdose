@@ -1,0 +1,21 @@
+class Solution {
+    public int findKthNumber(int m, int n, int k) {
+        int left=1;
+        int right=m*n;
+        while(left<right){
+            int mid=left+(right-left)/2;
+            int c=count(mid,m,n);
+            if(c>=k) right=mid;
+            else left=mid+1;
+        }
+        return left;
+    }
+    public int count(int mid,int m,int n){
+        int c=0;
+        for(int i=1;i<=m;i++){
+            int k=Math.min(mid/i,n);
+            c+=k;
+        }
+        return c;
+    }
+}
