@@ -1,0 +1,22 @@
+import java.util.*;
+ 
+public class BinomialCoefficient {
+ 
+    public static void main(String[] args)
+    {
+ 
+        int n = 5;
+        int r = 2;
+        double sum = 1;
+ 
+        // Calculate the value of n choose r using the
+        // binomial coefficient formula
+        for (int i = 1; i <= r; i++) {
+            sum = sum * (n - r + i) / i;
+        }
+ 
+        // Print the result after converting it to an
+        // integer
+        System.out.println((int)sum);
+    }
+}
